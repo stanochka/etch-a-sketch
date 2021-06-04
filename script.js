@@ -7,9 +7,11 @@ const makeGrid = (num) => {
     element.style.border = '1px solid rgba(195, 195, 195, 0.6)';
     container.appendChild(element);
   };
+  paint();
 };
 
 const clearCanvas = () => {
+  const divs = document.querySelectorAll('#container>div');
   divs.forEach((div) => {
     div.style.background = 'white';
   });
@@ -39,7 +41,7 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
     if (button.id == 'clearButton') {
-      clearCanvas()
+      clearCanvas();
     } else if (button.id == 'sizePicker') {
       gridSide = parseInt(prompt('How many squares per side do you want? Please enter a number from 3 to 40.'));
       if (gridSide < 3 || gridSide > 40) {
