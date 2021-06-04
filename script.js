@@ -8,8 +8,14 @@ const makeGrid = () => {
     element.style.border = '1px solid rgba(195, 195, 195)';
     element.id = `cell${i}`;
     container.appendChild(element);
-    console.log(`Div id=${element.id} added`);
   }
 }
 
 makeGrid()
+
+const divs = document.querySelectorAll('#container>div');
+divs.forEach((div) => {
+  div.addEventListener('mouseover', () => {
+    div.style.background = '#6f1087';
+  });
+});

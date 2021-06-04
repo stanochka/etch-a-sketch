@@ -17,6 +17,6 @@ h1 {
   position: relative;
   margin: auto;
   margin-top: 4%;
-  border: double 5px;
+  border: double 10px;
   display: grid;
 }
