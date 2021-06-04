@@ -1,5 +1,4 @@
 const container = document.querySelector('#container');
-console.log(container);
 
 const makeGrid = (num) => {
   for (let i = 0; i < num*num; i++) {
@@ -7,20 +6,30 @@ const makeGrid = (num) => {
     let element = document.createElement('div');
     element.style.border = '1px solid rgba(195, 195, 195, 0.6)';
     container.appendChild(element);
-  }
+  };
+};
+
+const clearCanvas = () => {
+  divs.forEach((div) => {
+    div.style.background = 'white';
+  });
+};
+
+const generateColor = () => {
+  var r = Math.floor(Math.random()*256);
+  var g = Math.floor(Math.random()*256);
+  var b = Math.floor(Math.random()*256);
+  color = `rgb(${r}, ${g}, ${b})`;
+};
+
+const paint = () => {
   const divs = document.querySelectorAll('#container>div');
   divs.forEach((div) => {
     div.addEventListener('mouseover', () => {
       div.style.background = color;
     });
   });
-}
-
-const clearCanvas = () => {
-  divs.forEach((div) => {
-    div.style.background = 'white';
-  })
-}
+};
 
 var gridSide = 16;  // default size
 var color = '#6f1087';  // default color
@@ -43,10 +52,7 @@ buttons.forEach((button) => {
       makeGrid(gridSide);
       }
     } else if (button.id == 'colorPicker') {
-      var r = Math.floor(Math.random()*256);
-      var g = Math.floor(Math.random()*256);
-      var b = Math.floor(Math.random()*256);
-      color = `rgb(${r}, ${g}, ${b})`;
+      generateColor();
     }
   });
 });
