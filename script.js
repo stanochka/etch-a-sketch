@@ -11,7 +11,7 @@ const makeGrid = (num) => {
   const divs = document.querySelectorAll('#container>div');
   divs.forEach((div) => {
     div.addEventListener('mouseover', () => {
-      div.style.background = '#6f1087';
+      div.style.background = color;
     });
   });
 }
@@ -23,7 +23,8 @@ const clearCanvas = () => {
 }
 
 var gridSide = 16;  // default size
-makeGrid(gridSide)
+var color = '#6f1087';  // default color
+makeGrid(gridSide);  // default grid
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
@@ -39,8 +40,13 @@ buttons.forEach((button) => {
         while (container.firstChild) {
           container.removeChild(container.firstChild);
         };
-        makeGrid(gridSide);
+      makeGrid(gridSide);
       }
+    } else if (button.id == 'colorPicker') {
+      var r = Math.floor(Math.random()*256);
+      var g = Math.floor(Math.random()*256);
+      var b = Math.floor(Math.random()*256);
+      color = `rgb(${r}, ${g}, ${b})`;
     }
   });
 });
