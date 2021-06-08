@@ -1,8 +1,10 @@
-# Etch-A-Sketch
+# :art:Etch-A-Sketch
 
 Sketch pad, you can change its size or use different colors (generated randomly).
 
-By making it I practiced:
+Here I practiced:
 
 - CSS grid
 - DOM manipulation
+
+[Demo](https://stanochka.github.io/etch-a-sketch/)
